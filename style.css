@@ -2,45 +2,55 @@ body {
   background-color: #ffe6eb;
   text-align: center;
   font-family: 'Cursive', sans-serif;
-  margin-top: 50px;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 h1 {
   color: #444;
-  font-size: 3.5em; /* Más grande el título */
+  font-size: 4em;
+  margin-bottom: 20px;
 }
 
 .heart {
-  font-size: 3rem;
+  font-size: 4rem;
 }
 
 /* Contenedor */
 .gift-container {
   position: relative;
-  width: 300px; /* Más ancho */
-  height: 300px; /* Más alto */
-  margin: 70px auto;
+  width: 80vw; /* 80% del ancho de pantalla */
+  max-width: 400px;
+  height: 80vw;
+  max-height: 400px;
+  margin: 0 auto;
   cursor: pointer;
 }
 
 /* Caja */
 .box {
-  width: 300px;
-  height: 300px;
+  width: 100%;
+  height: 100%;
   background-color: #ffb6c1;
-  border-radius: 15px;
+  border-radius: 20px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
+  box-shadow: 0px 10px 25px rgba(0,0,0,0.3);
   z-index: 1;
 }
 
 /* Tapa */
 .lid {
-  width: 300px;
-  height: 60px;
+  width: 100%;
+  height: 20%;
   background-color: #ff69b4;
-  border-radius: 15px 15px 0 0;
+  border-radius: 20px 20px 0 0;
   position: absolute;
   top: 0;
   left: 0;
@@ -50,8 +60,8 @@ h1 {
 
 /* Listón vertical */
 .ribbon-vertical {
-  width: 30px;
-  height: 300px;
+  width: 10%;
+  height: 100%;
   background-color: #ff3366;
   position: absolute;
   top: 0;
@@ -62,8 +72,8 @@ h1 {
 
 /* Listón horizontal */
 .ribbon-horizontal {
-  width: 300px;
-  height: 30px;
+  width: 100%;
+  height: 10%;
   background-color: #ff3366;
   position: absolute;
   top: 50%;
@@ -74,58 +84,13 @@ h1 {
 
 /* Moño arriba */
 .ribbon-bow {
-  width: 60px;
-  height: 60px;
+  width: 20%;
+  height: 20%;
   background-color: #ff3366;
   border-radius: 50%;
   position: absolute;
-  top: -30px;
+  top: -10%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 4;
-  box-shadow: 
-    -35px 0 0 0 #ff3366,
-    35px 0 0 0 #ff3366;
-}
-
-/* Mensaje */
-.message {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, 100%);
-  width: 250px; /* Más ancho el mensaje */
-  background: white;
-  padding: 20px;
-  border-radius: 15px;
-  font-size: 1.2em; /* Texto más grande */
-  color: #333;
-  box-shadow: 0px 8px 15px rgba(0,0,0,0.1);
-  opacity: 0;
-  z-index: 5;
-}
-
-/* Movimiento de la tapa */
-.gift-container.open .lid {
-  top: -90px;
-}
-
-/* Mensaje animado */
-.gift-container.open .message {
-  animation: riseCenter 2s forwards;
-  opacity: 1;
-}
-
-/* Animación */
-@keyframes riseCenter {
-  0% {
-    transform: translate(-50%, 100%);
-  }
-  50% {
-    transform: translate(-50%, -20%);
-  }
-  100% {
-    transform: translate(-50%, -50%);
-  }
-}
 
