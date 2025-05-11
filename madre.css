@@ -1,0 +1,130 @@
+body {
+    background-color: #ffe6eb;
+    text-align: center;
+    font-family: 'Cursive', sans-serif;
+    margin-top: 50px;
+  }
+  
+  h1 {
+    color: #444;
+    font-size: 2.5em;
+  }
+  
+  .heart {
+    font-size: 2rem;
+  }
+  
+  /* Contenedor */
+  .gift-container {
+    position: relative;
+    width: 200px;
+    height: 250px;
+    margin: 50px auto;
+    cursor: pointer;
+  }
+  
+  /* Caja */
+  .box {
+    width: 200px;
+    height: 200px;
+    background-color: #ffb6c1;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+  }
+  
+  /* Tapa */
+  .lid {
+    width: 200px;
+    height: 40px;
+    background-color: #ff69b4;
+    border-radius: 10px 10px 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: top 0.6s ease;
+    z-index: 3;
+  }
+  
+  /* Listón vertical */
+  .ribbon-vertical {
+    width: 20px;
+    height: 200px;
+    background-color: #ff3366;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+  
+  /* Listón horizontal */
+  .ribbon-horizontal {
+    width: 200px;
+    height: 20px;
+    background-color: #ff3366;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 2;
+  }
+  
+  /* Moño */
+  .ribbon-bow {
+    width: 40px;
+    height: 40px;
+    background-color: #ff3366;
+    border-radius: 50%;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
+    box-shadow: 
+      -25px 0 0 0 #ff3366,
+      25px 0 0 0 #ff3366;
+  }
+  
+  /* Mensaje dentro de la caja */
+  .message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 100%); /* Al principio oculto abajo */
+    width: 180px;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 0.9em;
+    color: #333;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.1);
+    opacity: 0;
+    z-index: 5; /* encima de todo */
+  }
+  
+  /* Movimiento de la tapa */
+  .gift-container.open .lid {
+    top: -70px;
+  }
+  
+  /* Animación del mensaje */
+  .gift-container.open .message {
+    animation: riseCenter 2s forwards;
+    opacity: 1;
+  }
+  
+  /* Nueva animación */
+  @keyframes riseCenter {
+    0% {
+      transform: translate(-50%, 100%);
+    }
+    50% {
+      transform: translate(-50%, -20%);
+    }
+    100% {
+      transform: translate(-50%, -50%);
+    }
+  }
+  
